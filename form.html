@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
+    <title>crud operation</title>
+  </head>
+  <body>
+    <div class="container  my-5">
+    <form >
+  <div class="form-group">
+    <label>Name : </label>
+    <input type="text" class="form-control" id="usname" placeholder="Enter your name" >
+    <span id="name" class="text-danger font-width-bold">  </span>
+  </div>
+  <div class="form-group">
+    <label>Phone : </label>
+    <input type="text" class="form-control" id="usphone" placeholder="Enter your phone" >
+    <span id="userphone" class="text-danger font-width-bold"> </span>
+  </div>
+  <div class="form-group">
+    <label>Email : </label>
+    <input type="text" class="form-control" id="usmail" placeholder="Enter your email" >
+    <span id="usermail" class="text-danger font-width-bold"> </span>
+  </div>
+  <div class="form-group">
+    <label>Passward : </label>
+    <input type="text" class="form-control" id="uspasward" placeholder="Enter your Passward" >
+    <span id="userpass" class="text-danger font-width-bold"> </span>
+  </div>
+  <div class="form-group">
+    <label>Confirm Passward : </label>
+    <input type="text" class="form-control" id="conpasward" placeholder="Enter your confirm Passward" >
+    <span id="userconfirm" class="text-danger font-width-bold"> </span>
+  </div>
+  
+  <button type="submit" class="btn btn-primary" onclick="validation()">Submit</button>
+</form>
+    </div>
+        <script>
+            function validation()
+            {
+              
+              // var checkname = /^[A-Za-z.]{3,}$/;
+              //   var username = document.getElementById("usname").value;
+              //   var res = username.test(checkname);
+              //   console.log(username);
+              //   if(username == ""){
+              //     document.getElementById("name").innerHTML="**User Name is required.";
+                  
+              //   }
+              //   else if(username.length<3){
+              //     document.getElementById("name").innerHTML="**User Name is too small.";
+              //   }else if(username.test(checkname))
+              //   {
+              //     document.getElementById("name").innerHTML="**User Name is Invalid.";
+              //   }else{
+              //     document.getElementById("name").innerHTML="";
+              //   }
+               var username = document.getElementById("usname").value;
+                var phone = document.getElementById("usphone").value; 
+                var email = document.getElementById("usmail").value;
+                var pass = document.getElementById("uspasward").value;
+                var confirmpass = document.getElementById("conpasward").value;
+
+                var checkname = /^[A-Za-z.]{3,}$/;
+                var number = /^ [789][0-9]{10}$/;
+                var mail = /^ [A-Za-z._0-9]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z]{3,6}$/;
+                var pasward = /^(?=.*[0-9])(?=.*[!@345678])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+                // alert(test(checkname));
+                if(username.test(checkname))
+                {
+                    document.getElementById("username").innerHTML="";
+                }else{
+                    document.getElementById("username").innerHTML="**User Name is Invalid.";
+                }
+
+                if(phone.test(number)){
+                    document.getElementById("userphone").innerHTML="";
+                }else{
+                    document.getElementById("userphone").innerHTML="*Number is Invallid.";
+                }
+
+                if(email.test(mail)){
+                    document.getElementById("usermail").innerHTML="";
+                }else{
+                    document.getElementById("").innerHTML="*Invalid email.";
+                }
+                
+                if(pass.test(pasward)){
+                    document.getElementById("userpass").innerHTML="";
+                }
+                else{
+                    document.getElementById("userpass").innerHTML="*Invalid Passward";
+                }
+                
+                if(pass.match(confirmpass)){
+                    document.getElementById("userconfirm").innerHTML="";
+                }else{
+                    document.getElementById("userconfirm").innerHTML="**Incorrect Passward";
+                }
+             }
+        </script>
+   
+  </body>
+</html>
